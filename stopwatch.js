@@ -38,9 +38,6 @@ function pauseTimer() {
     pauseButton.classList.add('lighter');
     startButton.style.cursor = 'pointer';
     pauseButton.style.cursor = 'auto';
-  } else {
-    // if the timer was already paused, when they click pause again, start the timer again
-    startTimer();
   }
 }
 function resetTimer() {
@@ -84,6 +81,3 @@ function getShowTime() {
   timerDisplay.innerHTML =
     hours + ':' + minutes + ':' + seconds + ':' + milliseconds;
 }
-
-// My goal is to improve the code from this article.
-// https://medium.com/@olinations/an-accurate-vanilla-js-stopwatch-script-56ceb5c6f45b
