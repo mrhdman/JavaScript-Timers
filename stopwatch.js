@@ -12,10 +12,8 @@ function startTimer() {
   if (!running) {
     startTime = new Date().getTime();
     tInterval = setInterval(getShowTime, 1);
-
     paused = 0;
     running = true;
-    timerDisplay.style.background = '#FF0000';
     timerDisplay.style.cursor = 'auto';
     timerDisplay.style.color = 'yellow';
     startButton.classList.add('lighter');
@@ -31,8 +29,6 @@ function pauseTimer() {
     savedTime = difference;
     paused = 1;
     running = false;
-    timerDisplay.style.background = '#A90000';
-    timerDisplay.style.color = '#690000';
     timerDisplay.style.cursor = 'pointer';
     startButton.classList.remove('lighter');
     pauseButton.classList.add('lighter');
@@ -47,8 +43,6 @@ function resetTimer() {
   paused = 0;
   running = false;
   timerDisplay.innerHTML = 'START';
-  timerDisplay.style.background = '#A90000';
-  timerDisplay.style.color = '#fff';
   timerDisplay.style.cursor = 'pointer';
   startButton.classList.remove('lighter');
   pauseButton.classList.remove('lighter');
