@@ -1,5 +1,6 @@
 var startButton = document.querySelector('.startTimer');
 var pauseButton = document.querySelector('.pauseTimer');
+var submitButton = document.querySelector('.submitTime');
 var timerDisplay = document.querySelector('.timer');
 var startTime;
 var updatedTime;
@@ -48,6 +49,9 @@ function resetTimer() {
   pauseButton.classList.remove('lighter');
   startButton.style.cursor = 'pointer';
   pauseButton.style.cursor = 'auto';
+}
+function submitTime() {
+  console.log('submit button clicked');
 }
 function getShowTime() {
   updatedTime = new Date().getTime();
