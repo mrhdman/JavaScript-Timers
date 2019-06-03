@@ -7,13 +7,13 @@ var updatedTime;
 var difference;
 var tInterval;
 var savedTime;
-var paused = 0;
+var paused = false;
 var running = false;
 function startTimer() {
   if (!running) {
     startTime = new Date().getTime();
     tInterval = setInterval(getShowTime, 1);
-    paused = 0;
+    paused = false;
     running = true;
     timerDisplay.style.cursor = 'auto';
     timerDisplay.style.color = 'yellow';
@@ -24,7 +24,7 @@ function pauseTimer() {
   } else if (!paused) {
     clearInterval(tInterval);
     savedTime = difference;
-    paused = 1;
+    paused = true;
     running = false;
     timerDisplay.style.cursor = 'pointer';
   }
@@ -33,14 +33,12 @@ function resetTimer() {
   clearInterval(tInterval);
   savedTime = 0;
   difference = 0;
-  paused = 0;
+  paused = true;
   running = false;
   timerDisplay.innerHTML = 'START';
   timerDisplay.style.cursor = 'pointer';
 }
-function submitTime() {
-  console.log('submit button clicked');
-}
+
 function getShowTime() {
   updatedTime = new Date().getTime();
   if (savedTime) {
@@ -66,4 +64,7 @@ function getShowTime() {
       : milliseconds;
   timerDisplay.innerHTML =
     hours + ':' + minutes + ':' + seconds + ':' + milliseconds;
+}
+function submitTime() {
+  console.log(timerDisplay.innerHTML);
 }
