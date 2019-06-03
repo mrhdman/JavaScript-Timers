@@ -17,10 +17,6 @@ function startTimer() {
     running = true;
     timerDisplay.style.cursor = 'auto';
     timerDisplay.style.color = 'yellow';
-    startButton.classList.add('lighter');
-    pauseButton.classList.remove('lighter');
-    startButton.style.cursor = 'auto';
-    pauseButton.style.cursor = 'pointer';
   }
 }
 function pauseTimer() {
@@ -31,10 +27,6 @@ function pauseTimer() {
     paused = 1;
     running = false;
     timerDisplay.style.cursor = 'pointer';
-    startButton.classList.remove('lighter');
-    pauseButton.classList.add('lighter');
-    startButton.style.cursor = 'pointer';
-    pauseButton.style.cursor = 'auto';
   }
 }
 function resetTimer() {
@@ -45,10 +37,6 @@ function resetTimer() {
   running = false;
   timerDisplay.innerHTML = 'START';
   timerDisplay.style.cursor = 'pointer';
-  startButton.classList.remove('lighter');
-  pauseButton.classList.remove('lighter');
-  startButton.style.cursor = 'pointer';
-  pauseButton.style.cursor = 'auto';
 }
 function submitTime() {
   console.log('submit button clicked');
